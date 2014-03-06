@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			Marca: <h:inputText value="#{automovelBean.automovel.modelo.marca.descricao}"/>
+			Modelo: <h:inputText value="#{automovelBean.automovel.modelo.descricao}"/>
+			Ano de Fabricação: <h:inputText value="#{automovelBean.automovel.anoFabricacao}"/>
+			Ano do Modelo: <h:inputText value="#{automovelBean.automovel.anoModelo}"/>
+			Preço: <h:inputText value="#{automovelBean.automovel.preco}"/>
+			Observações: <h:inputTextarea value="#{automovelBean.automovel.observacoes}"/>
+			<h:commandButton value="Salvar" action="#{automovelBean.salva}"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
