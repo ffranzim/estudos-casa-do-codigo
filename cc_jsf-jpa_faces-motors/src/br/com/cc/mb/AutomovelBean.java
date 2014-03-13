@@ -7,19 +7,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import lombok.Getter;
-import lombok.Setter;
 import br.com.cc.entity.Automovel;
 import br.com.cc.persistence.JPAUtil;
 
 @ManagedBean
 @Getter
-@Setter
 public class AutomovelBean {
 
 	private Automovel automovel = new Automovel();
 
 	private List<Automovel> automoveis;
-
+	
 	public void salva(Automovel automovel) {
 
 		EntityManager em = JPAUtil.getEntityManager();
@@ -33,7 +31,7 @@ public class AutomovelBean {
 	public List<Automovel> getAutomoveis() {
 		if (this.automoveis == null) {
 			EntityManager em = JPAUtil.getEntityManager();
-			Query q = em.createQuery("select a from Automoveis a", Automovel.class);
+			Query q = em.createQuery("select a from Automovel a", Automovel.class);
 			this.automoveis = q.getResultList();
 			em.close();
 		}

@@ -6,14 +6,14 @@
 <h:head></h:head> 
 <h:body> 
 	<h:form>
-		<h:dataTable value="#{automovelBean.listaAutomoveis}" var="automovel" border="1">
+		<h:dataTable value="#{automovelBean.automoveis}" var="automovel" border="1">
 			<h:column>
 				<f:facet name="header">Modelo</f:facet>
-				#{automovel.modelo.descricao}
+				#{automovel.modelo.nome}
 			</h:column>
 			<h:column>
 				<f:facet name="header">Marca</f:facet>
-				#{automovel.modelo.marca.descricao}
+				#{automovel.modelo.marca.nome}
 			</h:column>
 			<h:column>
 				<f:facet name="header">Ano fabricação</f:facet>
