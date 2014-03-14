@@ -1,4 +1,4 @@
-package br.com.cc.bo;
+package br.com.cc.to;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
