@@ -8,7 +8,7 @@ import javax.persistence.Query;
 
 import lombok.Getter;
 import br.com.cc.entity.Automovel;
-import br.com.cc.persistence.JPAUtil;
+import br.com.cc.persistence.JpaUtil;
 
 @ManagedBean
 @Getter
@@ -20,7 +20,7 @@ public class AutomovelBean {
 	
 	public void salva(Automovel automovel) {
 
-		EntityManager em = JPAUtil.getEntityManager();
+		EntityManager em = JpaUtil.getEntityManager();
 		em.getTransaction().begin();
 		em.persist(automovel);
 		em.getTransaction().commit();
@@ -30,7 +30,7 @@ public class AutomovelBean {
 	@SuppressWarnings("unchecked")
 	public List<Automovel> getAutomoveis() {
 		if (this.automoveis == null) {
-			EntityManager em = JPAUtil.getEntityManager();
+			EntityManager em = JpaUtil.getEntityManager();
 			Query q = em.createQuery("select a from Automovel a", Automovel.class);
 			this.automoveis = q.getResultList();
 			em.close();
@@ -39,7 +39,7 @@ public class AutomovelBean {
 	}
 
 	public void excluir(Automovel automovel) {
-		EntityManager em = JPAUtil.getEntityManager();
+		EntityManager em = JpaUtil.getEntityManager();
 		em.getTransaction().begin();
 		automovel = em.merge(automovel);
 		em.remove(automovel);
