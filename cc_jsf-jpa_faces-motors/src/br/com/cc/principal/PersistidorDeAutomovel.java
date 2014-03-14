@@ -7,13 +7,13 @@ import javax.persistence.Query;
 
 import br.com.cc.entity.Automovel;
 import br.com.cc.entity.Marca;
-import br.com.cc.persistence.JPAUtil;
+import br.com.cc.persistence.JpaUtil;
 
 public class PersistidorDeAutomovel {
 
 	public static void main(String[] args) {
 
-		EntityManager em = JPAUtil.getEntityManager();
+		EntityManager em = JpaUtil.getEntityManager();
 		// consultaTeste(em);
 		// incluirAutomovel(em);
 		// listarAutomovel(em);
