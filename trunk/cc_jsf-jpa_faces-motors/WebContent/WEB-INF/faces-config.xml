@@ -4,5 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
-
+    
+    <navigation-rule>
+    	<from-view-id>login</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<lifecycle>
+		<phase-listener>br.com.cc.phase.AutenticacaoPhaseListener</phase-listener>
+	</lifecycle>
 </faces-config>
