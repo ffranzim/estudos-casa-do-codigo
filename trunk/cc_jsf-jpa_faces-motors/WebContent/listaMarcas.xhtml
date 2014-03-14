@@ -12,6 +12,15 @@
 				<f:facet name="header">Modelo</f:facet>
 				#{marca.nome}
 			</h:column>
+			<h:column>
+				<f:facet name="header">Modelos Cadastrados</f:facet>
+				<ul>
+					<ui:repeat value="#{marca.modelos}" var="modelo">
+						<li>#{modelo.nome}</li>
+					</ui:repeat>
+				</ul>
+			</h:column>
+
 
 		</h:dataTable>
 	</h:form>
