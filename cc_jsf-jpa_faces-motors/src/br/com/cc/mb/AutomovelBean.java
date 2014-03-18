@@ -3,20 +3,26 @@ package br.com.cc.mb;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import lombok.Getter;
+import lombok.Setter;
 import br.com.cc.entity.Automovel;
+import br.com.cc.entity.Marca;
 import br.com.cc.persistence.JpaUtil;
 
+@ViewScoped
 @ManagedBean
-@Getter
+@Getter @Setter
 public class AutomovelBean {
 
 	private Automovel automovel = new Automovel();
 
 	private List<Automovel> automoveis;
+
+	private Marca marca;
 	
 	public void salva(Automovel automovel) {
 
