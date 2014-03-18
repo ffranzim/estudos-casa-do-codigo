@@ -8,7 +8,6 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
-
 public class AutenticacaoPhaseListener implements PhaseListener {
 
 	private static final long serialVersionUID = 829468072179887258L;

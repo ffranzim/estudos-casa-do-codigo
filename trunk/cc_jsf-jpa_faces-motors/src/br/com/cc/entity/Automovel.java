@@ -14,10 +14,14 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
+import br.com.cc.validation.MaxAnoAtualMais;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 @NamedQueries ({ 
 	@NamedQuery(name="Automovel.listarTodos", query="select a from Automovel a"),
@@ -32,10 +36,21 @@ public class Automovel {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	@Min(1950)
+	@MaxAnoAtualMais(value=1,message="O máximo do ano de fabricação é {0}")
 	private Integer anoFabricacao;
+	
+	@Min(1950)
+	@MaxAnoAtualMais(value=1,message="O máximo do ano do modelo é {0}")
 	private Integer anoModelo;
+	
+	@NotNull
 	private Double preco;
+	
 	private String observacoes;
+	
+	@NotNull
 	private Long kilometragem;
 	
 	@Temporal(TemporalType.TIMESTAMP)

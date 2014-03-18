@@ -3,7 +3,10 @@ package br.com.cc.principal;
 
 public class PersistidorDeAutomovel2 {
 
-//	public static void main(String[] args) {
+	public static void main(String[] args) {
+		System.out.println("CRTL + F11");
+	
+	}
 				
 //		EntityManager em = JPAUtil.getEntityManager();
 ////		incluirAutomovel(em);
