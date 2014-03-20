@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<body>
+	<h:form id="formAutomovel" >
+		Todas as mensagens:<br />
+		<h:messages />
+		<hr />
+		Apenas mensagens globais:<br />
+		<h:messages globalOnly="true" />
+		<hr />
+		<h:panelGrid columns="3">
+
+			<h:outputLabel value="Marca:" />
+			<h:selectOneMenu id="selectMarca" label="marca" value="#{automovelBean.marca}" required="true" converter="entityConverter">
+				<f:selectItem itemLabel="-- Selecione --" noSelectionOption="true" />
+				<f:selectItems value="#{marcaBean.marcas}" var="marca" itemValue="#{marca}" itemLabel="#{marca.nome}" />
+				<f:ajax render="selectModelo" />
+			</h:selectOneMenu>
+			<h:message for="selectMarca" />
+			
+			<h:outputLabel value="Modelo:" />
+			<h:selectOneMenu id="selectModelo" label="modelo" value="#{automovelBean.automovel.modelo}" required="true" converter="entityConverter">
+				<f:selectItem itemLabel="-- Selecione --" noSelectionOption="true" />
+				<f:selectItems value="#{automovelBean.marca.modelos}" var="modelo" itemValue="#{modelo}" itemLabel="#{modelo.nome}" />
+			</h:selectOneMenu>
+			<h:message for="selectModelo" />
+			
+			<h:outputLabel value="#{msgs.automovel_incluir_output_label_ano_fabricacao}" />
+			<h:inputText id="#{msgs.automovel_incluir_id_ano_fabricacao}" label="#{msgs.automovel_incluir_input_label_ano_fabricacao}" value="#{automovelBean.automovel.anoFabricacao}" />
+			<h:message for="#{msgs.automovel_incluir_id_ano_fabricacao}" />
+
+			<h:outputLabel value="#{msgs.automovel_incluir_output_label_ano_modelo}" />
+			<h:inputText id="#{msgs.automovel_incluir_id_ano_modelo}" label="#{msgs.automovel_incluir_input_label_ano_modelo}" value="#{automovelBean.automovel.anoModelo}">
+				<f:validateLongRange minimum="1950" maximum="2014" />
+			</h:inputText>
+			<h:message for="#{msgs.automovel_incluir_id_ano_modelo}" />
+
+			<h:outputLabel value="#{msgs.automovel_incluir_output_label_preco}" />
+			<h:inputText id="#{msgs.automovel_incluir_id_preco}" label="#{msgs.automovel_incluir_input_label_preco} " value="#{automovelBean.automovel.preco}" converterMessage="#{msgs.automovel_incluir_converter_preco}"/>
+			<h:message for="#{msgs.automovel_incluir_id_preco}" />
+
+			<h:outputLabel id="inputKilometragem" value="Kilometragem:" />
+			<h:inputText value="#{automovelBean.automovel.kilometragem}" />
+			<h:message for="inputKilometragem" />
+			
+			<h:outputLabel value="Observações:" />
+			<h:inputTextarea id="inputObservacoes" value="#{automovelBean.automovel.observacoes}" />
+			<h:message for="inputObservacoes" />
+		</h:panelGrid>
+		<h:commandButton value="Salvar" action="#{automovelBean.salvar(auto)}" />
+	</h:form>
+
+</body>
+</html>

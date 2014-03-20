@@ -1,5 +1,6 @@
 package br.com.cc.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -18,6 +19,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import br.com.cc.validation.MaxAnoAtualMais;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,9 +32,12 @@ import lombok.Setter;
 })
 @Entity @Table(name="tb_automovel")
 @Getter @Setter
+@EqualsAndHashCode(of="id")
 @NoArgsConstructor
-public class Automovel {
+public class Automovel implements Serializable {
 	
+	private static final long serialVersionUID = -437803547082936058L;
+
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -68,5 +73,5 @@ public class Automovel {
 		this.kilometragem = kilometragem;
 		this.modelo = modelo;
 	}
-	
+
 }

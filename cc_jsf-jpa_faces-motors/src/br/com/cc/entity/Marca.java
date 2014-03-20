@@ -11,12 +11,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity @Table(name="tb_marca") 
 @Getter @Setter
+@EqualsAndHashCode(of="id")
 @NoArgsConstructor
 public class Marca {
 	
@@ -45,14 +47,4 @@ public class Marca {
 			this.modelos.add(modelo);
 		}
 	}
-
-
-
-
-
-
-
-
-
-
 }
