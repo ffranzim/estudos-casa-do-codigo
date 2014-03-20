@@ -1,5 +1,6 @@
 package br.com.cc.mb;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -16,16 +17,15 @@ import br.com.cc.persistence.JpaUtil;
 @ViewScoped
 @ManagedBean
 @Getter @Setter
-public class AutomovelBean {
+public class AutomovelBean implements Serializable {
+
+	private static final long serialVersionUID = -2250941288729735637L;
 
 	private Automovel automovel = new Automovel();
-
 	private List<Automovel> automoveis;
-
 	private Marca marca;
 	
 	public void salva(Automovel automovel) {
-
 		EntityManager em = JpaUtil.getEntityManager();
 		em.getTransaction().begin();
 		em.persist(automovel);
@@ -51,6 +51,9 @@ public class AutomovelBean {
 		em.remove(automovel);
 		em.getTransaction().commit();
 		em.close();
-
+	}
+	
+	public void salvar(Automovel automovel) {
+		System.out.println("Cheguei aqui");
 	}
 }

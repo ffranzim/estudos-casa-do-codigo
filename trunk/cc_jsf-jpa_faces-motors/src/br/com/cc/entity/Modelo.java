@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +17,7 @@ import lombok.Setter;
 
 @Entity @Table(name="tb_modelo") 
 @Getter @Setter
+@EqualsAndHashCode(of="id")
 @NoArgsConstructor
 public class Modelo {
 	
@@ -33,9 +35,7 @@ public class Modelo {
 		this.potencia = potencia;
 		this.marca = marca;
 	}
-	
-	
-	
-	
 
+
+	
 }
