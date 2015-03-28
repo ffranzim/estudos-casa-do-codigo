@@ -9,7 +9,7 @@
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cc_jsf-jpa_faces-motors"/>
 			<property name="javax.persistence.jdbc.user" value="cc_jsf-jpa" />
-			<property name="javax.persistence.jdbc.password" value="senha01"/>
+			<property name="javax.persistence.jdbc.password" value="Senha012"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
